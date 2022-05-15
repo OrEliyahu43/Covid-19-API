@@ -27,13 +27,12 @@ const covidByCountry = {
 };
 
 
-async function orderCoutries(url) {
+export async function orderCoutries(url) {
     const continents = {};
 
     const allCountryData = await fetch(url);
     const allCounties = await allCountryData.json()
-    for (country of allCounties) {
-
+    for (let country of allCounties) {
         const name = country.name.common;
         const regionName = country.region;
         if (regionName === '')
@@ -47,12 +46,12 @@ async function orderCoutries(url) {
 }
 
 
-async function getCovidByCountry() {
+export async function getCovidByCountry() {
 
     const countriesByRegion = await orderCoutries(`https://restcountries.herokuapp.com/api/v1`)
     const covid_19_Data = await fetch(` https://corona-api.com/countries`);
     const covid19Parsed = await covid_19_Data.json();
-    for (country of covid19Parsed.data) {
+    for (let country of covid19Parsed.data) {
 
         const countryName = country.name;
         const continent = countriesByRegion[countryName]
@@ -66,8 +65,7 @@ async function getCovidByCountry() {
  
    
     }
+
+    return covidByCountry;
 }
 
-getCovidByCountry().then(() => {
-    console.log(covidByCountry);
-})

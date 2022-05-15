@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
+    <h1>Covid-19 status.</h1>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
     
 
+    <div id="data-type-container">
+        
+        <span>Choose parameter:</span>
+        <button class="param_btn">confirmed</button>
+        <button class="param_btn">deaths</button>
+        <button class="param_btn">recovered</button>
+        <button class="param_btn">critical</button>
+
+    </div>
+    <div id="button-container">
+        <span>Choose continent:</span>
+        <button class="continent_btn">Europe</button>
+        <button class="continent_btn">Asia</button>
+        <button class="continent_btn">Africa</button>
+        <button class="continent_btn">Americas</button>
+        <button class="continent_btn">Oceania</button>
+
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <script src="./script/script.js"></script>
+    <script src="script/chart.js" type="module"></script>
+    <script src="./script/script.js" type="module"></script>
 </body>
+
 </html>
