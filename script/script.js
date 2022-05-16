@@ -48,8 +48,8 @@ export async function orderCoutries(url) {
 
 export async function getCovidByCountry() {
 
-    const countriesByRegion = await orderCoutries(`https://restcountries.herokuapp.com/api/v1`)
-    const covid_19_Data = await fetch(` https://corona-api.com/countries`);
+    const countriesByRegion = await orderCoutries(`https://intense-mesa-62220.herokuapp.com/restcountries.herokuapp.com/api/v1`)
+    const covid_19_Data = await fetch(`https://intense-mesa-62220.herokuapp.com/corona-api.com/countries`);
     const covid19Parsed = await covid_19_Data.json();
     for (let country of covid19Parsed.data) {
 

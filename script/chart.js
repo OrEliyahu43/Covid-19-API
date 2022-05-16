@@ -6,7 +6,7 @@ const paramButtons = document.querySelectorAll('.param_btn')
 const continentButtons = document.querySelectorAll('.continent_btn')
 let currentContinenet = 'Europe'
 let currentParameter = 'confirmed'
-let covidData;
+let covidData= {} ;
 
 async function createTable(coviddata,currentContinenet, currentParameter) {
 
@@ -71,7 +71,11 @@ async function initPage(){
     })
 }
 
-initPage()
+initPage().catch(
+    ()=>{
+        console.log('error')
+    }
+)
 
 
 
